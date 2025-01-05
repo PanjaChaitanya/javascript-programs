@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+        // given number is palindrome number or not
+        let palindromeNum = () =>{
+            let num = parseInt(prompt("Enter a number"))
+            temp = num
+            sum = 0;
+            while(num>0){
+                rem = num%10
+                sum = sum * 10 + rem
+                num = parseInt(num/10)
+            }
+            document.writeln("original number: ",temp,`<br>`);
+            document.writeln("reversed number:",sum,`<br>`);
+            if (temp == sum) {
+                document.writeln("Palindrome");
+            } else {
+                document.writeln("Not Palindrome");
+            }
+        }
+        palindromeNum()
+    </script>
+</body>
+</html>
