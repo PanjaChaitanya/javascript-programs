@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number</title>
+</head>
+<body>
+    <script>
+        var number = 12345;
+        var sum = 0,a;
+        while (number > 0){
+            a = number % 10;
+            sum = sum + a;
+            number = parseInt(number/10);
+            if (number == 0 && sum >= 10) {
+                number = sum;
+                sum = 0
+            }
+        }
+        document.writeln(sum)
+    </script>
+</body>
+</html>
