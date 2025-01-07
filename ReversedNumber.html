@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed Numbers</title>
+</head>
+<body>
+    <script>
+        let ReversedNumbers = () =>{
+            let start = 32;
+            let end = 950;
+            document.writeln("Original => Reversed<br>");  
+            for(let i=start;i<end;i++){
+                let temp = i;
+                let sum = 0;
+                while(temp > 0){
+                    let rem = temp%10
+                    sum = sum*10 + rem;
+                    temp = parseInt(temp/10);
+                }
+         
+                document.writeln(i, " => ", sum, "<br>"); 
+            }
+        }
+        ReversedNumbers()
+    </script>
+</body>
+</html>
