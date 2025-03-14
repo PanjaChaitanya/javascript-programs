@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterate JSON</title>
+</head>
+<body>
+    <script>
+         // program to iterate over any json object printing key value pairs
+
+         var printJson = (sampleJson) =>{
+            for(key in sampleJson){
+                if(sampleJson.hasOwnProperty(key)){
+                    if(typeof sampleJson[key] ==="object" &&sampleJson[key] !==null){
+                        console.log(key,"=>", sampleJson[key])
+                        printJson(sampleJson[key])   
+                    }else{
+                        console.log(key,':', sampleJson[key])
+                    }
+                }
+            }
+        }
+
+        // Example JSON object
+        var sampleJson = {
+            "name": "Chaithu",
+            "age": 22,
+            "role": "Web Developer",
+            "skills": ["HTML", "CSS", "JavaScript"]
+        };
+        
+    </script>
+</body>
+</html>
