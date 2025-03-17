@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+</head>
+<body>
+    <script>
+       // WAP to check Weather the given number is Armstrong or not?
+
+        let ArmstrongNumber = () =>{
+            let num = parseInt(prompt("Enter a number"))
+            let len = num.toString().length
+            let sum = 0;
+            let temp = num;
+            while(temp>0){
+                let rem = temp % 10;
+                sum = sum + Math.pow(rem,len);
+                temp = parseInt(temp/10);
+            }
+            document.writeln("Result :",sum, "<br>");
+            if (num == sum) {
+                document.writeln(num + " is an Armstrong number");
+            } else {
+                document.writeln(num + " is not an Armstrong number");
+            }
+        }
+        ArmstrongNumber()
+    </script>
+</body>
+</html>
