@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>String OTP Generator</title>
+    </head>
+    <body>
+        <div class="container">
+
+        </div>
+        <input type="button" value="Generate 4" onclick="displayOtp4()">
+        <input type="button" value="Generate 6" onclick="displayOtp6()">
+        <script>
+            //displaying 4 character String
+            var displayOtp4 = () => {
+                var otp = stringGenerator('U') + stringGenerator('L') + stringGenerator('U') + stringGenerator('L');
+                document.querySelector(".container").innerText = otp
+            }
+            //displaying 6 character String
+            var displayOtp6 = () => {
+                var otp = stringGenerator('U') + stringGenerator('L') + stringGenerator('L') + stringGenerator('U') + stringGenerator('L') + stringGenerator('U');
+                document.querySelector(".container").innerText = otp
+            }
+            //getting random Number
+            var randomNumber = (min,max) => {
+                var randomValue = Math.round(Math.random() * max)
+                if( randomValue < min){
+                randomValue = Math.round(Math.random() * (max - min) + min )
+                }
+                return randomValue;
+            }
+            //gettring random Character
+            var stringGenerator = (type) => {
+                if(type == "U"){
+                    min = 65;
+                    max = 90
+                }
+                else if(type == "L"){
+                    min = 97;
+                    max = 122
+                }
+                var ran = randomNumber(min,max)
+                var randomStr = String.fromCharCode(ran)
+                return randomStr;
+            }
+        </script>
+    </body>
+</html>
