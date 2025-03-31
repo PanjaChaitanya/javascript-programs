@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Logical programs</title>
+        <style>
+            .msg{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 30px;
+                position: absolute;
+                left: 23%;
+                top: 37%;
+                padding: 120px 80px 20px 80px;
+                width: 650px;
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+                border: 2px solid rgb(247, 244, 244);
+                border-radius: 20px;
+                color: rgb(255, 0, 212);
+            }
+            img{
+                margin: 10px auto;
+                z-index: 1; position: absolute;
+                left: 44%;
+                top: 37%;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="emoji.gif" width="200px">
+        <div class="msg">
+            Inspect and Open Console Tab to See the OutPut
+        </div>
+        <script>
+            alert("Select an Option From the Given Programs");
+            var choice = prompt("1.Palindrome || 2.Armstrong Number || 3.Sum Of Digits || 4.Find Your Lucky Number || 5.Even or Odd")
+            switch(choice){
+                case "1" :
+                    palindrome();
+                break;
+            
+                case "2" :
+                    armstrong();
+                break;
+                case "3":
+                    sumOfDigits();
+                break;
+                case "4" :
+                    luckyNumber();
+                break;
+                case "5" :
+                    EvenOdd();
+                break;
+                default:
+                    console.log("Invalid choice")
+                break;
+
+            }
+            function palindrome(){
+                var sum = 0,n = parseInt(prompt("Enter a Number:"));
+                console.log("Entered Number is: " + n);
+                var temp = n;
+                while(n > 0){
+                    var rem = n % 10;
+                    sum = (sum*10) + rem;
+                    n = n / 10;
+                    n = parseInt(n);
+                }
+                console.log("Reversed Number: " + sum)
+                if( temp == sum){
+                    console.log("It is a Palindrome Number")
+                }
+                else{
+                    console.log("It is Not a Palindrome Number")
+                }
+            }
+            function armstrong(){
+                var n = prompt("Enter a Number:")//153
+                console.log("Entered Number: " + n);
+                var len = n.length;
+                console.log("length of the number is: " + len);
+                var result = 0; temp = n;
+                while(n > 0){
+                    var rem = n % 10;
+                    result = result + (rem**len);
+                    n = n / 10;
+                    n = parseInt(n)
+                }
+                console.log("Result Number: " +result);
+                if( temp == result){
+                    console.log("It is a Armstrong Number")
+                }
+                else{
+                    console.log("It is Not a Armstrong Number")
+                }
+            }
+            function sumOfDigits(){
+                var n = prompt("Enter a Number:")//123
+                console.log("Entered Number: " + n);
+                var sum = 0
+                while(n > 0){
+                    var rem = n % 10;
+                    sum = sum + rem
+                    n = n / 10;
+                    n = parseInt(n);
+                }
+                console.log("sum of Digits: " + sum)
+            }
+            function luckyNumber(){
+                var n = prompt("Enter a Number:")//123
+                console.log("Entered Number: " + n);
+                var sum = 0, result = 0;
+                while(n > 0){
+                    var rem = n % 10;
+                    sum = sum + rem
+                    n = n / 10;
+                    n = parseInt(n);
+                }
+                while(sum > 0){
+                    var remainder = sum % 10;
+                    result = result + remainder;
+                    sum = sum / 10;
+                    sum = parseInt(sum);
+                }
+                console.log("Your Lucky Number is: " + result)
+
+            }
+
+            function EvenOdd(){
+                var n = parseInt(prompt("Enter a number"))
+                console.log("Entered number: " +n)
+                if( n % 2 == 0){
+                    console.log("It is EVEN number");
+                }
+                else{
+                    console.log("It is ODD number");  
+                }
+            }
+            
+        </script>
+        
+    </body>
+</html>
